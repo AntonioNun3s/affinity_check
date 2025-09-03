@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+// puts -> printf sem formatacao de texto e pula linha automaticamente
+
 typedef struct{
 
     // Características básicas
@@ -34,9 +36,11 @@ int cadastro(){
 
     puts("insira o nome do usuario (minimo de 3 digitos)");
     fgets(usuario.nome, 50, stdin);
-    if(strlen(usuario.nome) < 3) return 1;
+    if(strlen(usuario.nome) < 3) return 1; // verifica se o nome do usuario eh pequeno dms
 
-    usuario.nome[strcspn(usuario.nome, "\n")] = '\0';
+    usuario.nome[strcspn(usuario.nome, "\n")] = '\0'; // remove o ultimo caractere do fgets
+    // nota: o ultimo caractere do fgets eh um \n que pula a linha, pra impedir que de problema nos arquivos de dados
+    // todos os dados vao usar esse filtro pois o fgets eh uma porcaria
 
     puts("insira a data de nascimento do usuario neste formato: (DD/MM/AAAA). eh obrigatorio as barras");
     fgets(usuario.nascimento, 20, stdin);
@@ -50,6 +54,7 @@ int cadastro(){
     else if(usuario.nascimento[3] > 49 || usuario.nascimento[3] < 48 || usuario.nascimento[4] > 57 || usuario.nascimento[4] < 48 || usuario.nascimento[5] != 47) return 2;
 
     else if(usuario.nascimento[6] > 50 || usuario.nascimento[6] < 48 || (usuario.nascimento[7] != 57 && usuario.nascimento[7] != 48) || usuario.nascimento[8] > 57 || usuario.nascimento[8] < 48 || usuario.nascimento[9] > 57 || usuario.nascimento[9] < 48) return 2;
+    // filtra a data de nascimento da pessoa para ficar padronizada
 
     puts("insira o email do usuario");
     fgets(usuario.email, 50, stdin);
@@ -110,16 +115,16 @@ int cadastro(){
 
     FILE *data_file = fopen("../data/data.txt", "a+");
 
-    if(data_file == NULL){
+    if(data_file == NULL){ // checa caso o arquivo existe
 
         return 3;
     }
 
     size_t tamanho = 0;
     fseek(data_file, 0, SEEK_END);
-    tamanho = ftell(data_file);
+    tamanho = ftell(data_file); // pega o tamanho do arquivo
 
-    if(tamanho < 150){
+    if(tamanho < 150){ // verifica se o arquivo nao tem cabecalho. caso nao tiver, adicionar um
         freopen("data/data.txt", "w", data_file);
         char cabecalho[256] = "nome,data,email,telefone,time,equipe,proficao,cidade,comida favorita,esporte favorito,gosto musical,signo,filme favorito,hobbie,videogame favorito\n";
         fputs(cabecalho, data_file);
@@ -141,6 +146,8 @@ int cadastro(){
     fputs(usuario.filme, data_file); fputc(',', data_file);
     fputs(usuario.hobbie, data_file); fputc(',', data_file);
     fputs(usuario.videogame, data_file); fputc('\n', data_file);
+    // botar o novo usuario separado por virgulas
+
 
     fclose(data_file);
 
@@ -149,6 +156,8 @@ int cadastro(){
 }
 
 int pesquisar_usuarios(){
+
+    // TODO: completar esta funcao
 
     //char [30]
 }
@@ -179,55 +188,55 @@ int gerar_relatorio(){
 
     char buffer2[512];
 
-    fgets(buffer, sizeof(buffer), cabecalho);
+    fgets(buffer, sizeof(buffer), cabecalho); // pega o cabecalho do arquivo
 
     while(checar_fim != '\n'){
 
         char palavras_repetidas[25][30];
 
-        if(strchr(buffer + k, ',') != NULL){
+        if(strchr(buffer + k, ',') != NULL){ // caso ele ache uma virgula, comecar a escrever ela na variavel categoria
             strcpy(categoria, "");
             cabecalho_vir++;
-            k = strchr(buffer + k, ',');
+            k = strchr(buffer + k, ','); // tem um erro aqui
             k++;
             int i = 0;
-            while(1){
+            while(1){ // escreve o nome da categoria, caractere por caractere
 
                 if(*(buffer + k + i) == ',' || *(buffer + k + i) == '\n') break;
                 categoria[i] = *(buffer + k + i);
                 i++;
             }
-            categoria[i + 1] = '\0';
+            categoria[i + 1] = '\0'; // fecha a string
         }
 
         while(cabecalho_vir > cabecalho_loop){
             int i = 0;
             char temp;
             int cabecalho_vir2 = 0;
-            fgets(buffer2, sizeof(buffer2), cabecalho);
+            fgets(buffer2, sizeof(buffer2), cabecalho); // pega as linhas de dados
 
             if(strchr(buffer2 + i, ',') != NULL){
                 strcpy(nome, "");
                 cabecalho_vir2++;
-                i = strchr(buffer2 + i, ',');
+                i = strchr(buffer2 + i, ','); // tem um erro aqui
                 i++;
                 int j = 0;
 
-                while(1){
+                while(1){ // escreve o nome da pessoa na variavel, caractere por caractere
 
                     if(*(buffer2 + i + j) == ',' || *(buffer2 + i + j) == '\n') break;
                     nome[i] = *(buffer + i + j);
                     j++;
                 }
-                nome[j + 1] = '\0';
+                nome[j + 1] = '\0'; // fecha a string
 
             }
             while(cabecalho_vir2 < cabecalho_loop){
                 
-                if(strchr(buffer2 + i, ',') != NULL){
+                if(strchr(buffer2 + i, ',') != NULL){ //procura o item da categoria da pessoa selecionada
                     strcpy(item, "");
                     cabecalho_vir2++;
-                    i = strchr(buffer2 + i, ',');
+                    i = strchr(buffer2 + i, ','); // tem um erro aqui
                     i++;
                     int j = 0;
                     if(cabecalho_vir2 == cabecalho_vir){
@@ -245,11 +254,12 @@ int gerar_relatorio(){
                     for(int z = 0; z < sizeof(palavras_repetidas); z++){
                         if(strcmp(palavras_repetidas[z], item) == 0) x = 1;
                     }
-
+                        // trecho de codigo incompleto. 90% de chance de estar incorreto
                     if(x = 0){
                         strcpy(palavras_repetidas[repetida], item);
                         repetida++;
                     }
+                    // TODO: continuar esta funcao e corrigir alguns erros
                 }
 
             }
@@ -261,6 +271,8 @@ int gerar_relatorio(){
 }
 
 int pesquisar_afinidade(){
+
+    // TODO: fazer esta funcao
 
 }
 
@@ -279,7 +291,7 @@ int main(){
         puts("4- pesquisar afinidade entre dois individuos");
         puts("0- fechar o programa");
         scanf("%d", &escolha);
-        getchar();
+        getchar(); // filtra o \n do scanf
 
         if(escolha == 1){
             int res = cadastro();
@@ -287,8 +299,10 @@ int main(){
             if(res == 1) fprintf(stderr,"nome \n");
             else if(res == 2) fprintf(stderr, "formato de data invalido\n");
             else if(res == 3) fprintf(stderr, "nao foi possivel abrir o arquivo\n");
-            else puts("tudo certo");
+            else puts("tudo certo"); // manuseio de erros
         }
+
+        // TODO: continuar a funcao principal
 
         return 0;
     }
