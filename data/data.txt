@@ -1,0 +1,26 @@
+nome,data,email,telefone,time,equipe,profissao,cidade,comida,esporte,musica,signo,filme,hobbie,videogame
+Ana Souza,1992-01-08,ana.souza@email.com,51954193877,nao,nao,Estudante,Sapucaia do Sul,Lasanha,Ciclismo,Sertanejo,Capricornio,Matrix,Leitura,nao
+Lucas Pereira,2007-09-19,lucas.pereira@email.com,51898762766,Gremio,Trio Eletro,Professor,Sapucaia do Sul,Pizza,Volei,Funk,Virgem,Titanic,Leitura,CS:GO
+Mariana Silva,2000-08-27,mariana.silva@email.com,51899137385,Inter,Mafia da Graxa,nao,Esteio,Cachorro-quente,Volei,Funk,Virgem,Vingadores,Leitura,CS:GO
+Carlos Oliveira,2002-07-12,carlos.oliveira@email.com,51899631723,Gremio,TNT,Mecanico,Canoas,Pizza,Futebol,Funk,Cancer,Matrix,Desenho,nao
+Fernanda Lima,2008-04-09,fernanda.lima@email.com,51892376456,nao,nao,Estudante,Campo Bom,Pizza,Skate,Funk,Aries,Inception,Leitura,Minecraft
+Rafael Gomes,2005-03-01,rafael.gomes@email.com,51891547892,Gremio,Trio Eletro,nao,Novo Hamburgo,Lasanha,Basquete,Pop,Peixes,nao,Jogging,The Sims
+Patricia Costa,1995-12-22,patricia.costa@email.com,51894321876,Inter,Atropelando,Professor,Sao Leopoldo,Xis,Volei,nao,Capricornio,Vingadores,nao,Fortnite
+Joao Almeida,2000-02-16,joao.almeida@email.com,51893567812,nao,TNT,Programador,Esteio,Pizza,Skate,Sertanejo,Aquario,Matrix,Desenho,CS:GO
+Beatriz Rocha,2003-11-10,beatriz.rocha@email.com,51899876213,Inter,nao,nao,Canoas,Churrasco,Futebol,Rock,Escorpiao,Inception,Leitura,nao
+Gustavo Martins,1999-07-02,gustavo.martins@email.com,51897654321,Gremio,Trio Eletro,Professor,Portao,Pizza,nao,Rock,Cancer,Titanic,Musica,The Sims
+Claudia Fernandes,2001-05-27,claudia.fernandes@email.com,51891234567,nao,Atropelando,Mecanico,Sao Leopoldo,Lasanha,Futebol,MPB,Gemeos,Interestelar,Jogging,CS:GO
+Eduardo Lopes,2004-09-21,eduardo.lopes@email.com,51895432198,Inter,Mafia da Graxa,nao,Sapucaia do Sul,Cachorro-quente,Volei,nao,Virgem,Matrix,Leitura,Fortnite
+Sofia Nunes,2006-10-14,sofia.nunes@email.com,51899887766,nao,TNT,Estudante,Novo Hamburgo,Churrasco,Skate,Pop,Libra,Inception,Desenho,Minecraft
+Mateus Ribeiro,1993-06-19,mateus.ribeiro@email.com,51897612345,Gremio,Atropelando,Programador,Canoas,Pizza,nao,Rock,Gemeos,nao,Musica,nao
+Juliana Araujo,2007-03-28,juliana.araujo@email.com,51896543211,Inter,Trio Eletro,Estudante,Esteio,Lasanha,Futebol,Funk,Aries,Matrix,Jogging,The Sims
+Bruno Carvalho,1997-08-05,bruno.carvalho@email.com,51893456782,nao,nao,Mecanico,Sapucaia do Sul,Xis,Ciclismo,Sertanejo,Leao,Inception,Leitura,FIFA
+Camila Dias,2009-12-30,camila.dias@email.com,51897865432,Inter,TNT,nao,Sao Leopoldo,Pizza,Volei,Rock,Capricornio,Interestelar,Desenho,Minecraft
+Pedro Vieira,2002-02-22,pedro.vieira@email.com,51891239876,Gremio,Mafia da Graxa,Estudante,Portao,Lasanha,nao,Pop,Peixes,Vingadores,Musica,CS:GO
+Larissa Pinto,1998-11-18,larissa.pinto@email.com,51894561234,Inter,Atropelando,nao,Canoas,Churrasco,Futebol,MPB,Escorpiao,Matrix,Desenho,Fortnite
+Thiago Castro,2006-01-11,thiago.castro@email.com,51893216547,nao,Trio Eletro,Professor,Sapucaia do Sul,Pizza,Skate,Sertanejo,Capricornio,nao,Jogging,The Sims
+Marcos Barbosa,1994-05-04,marcos.barbosa@email.com,51897654322,Gremio,nao,Programador,Esteio,Xis,Ciclismo,Rock,Touro,Matrix,Leitura,Minecraft
+Isabela Correia,2003-10-25,isabela.correia@email.com,51892349876,nao,Atropelando,Estudante,Novo Hamburgo,Cachorro-quente,nao,Funk,Escorpiao,Vingadores,nao,CS:GO
+Felipe Melo,2001-07-15,felipe.melo@email.com,51897891234,Inter,TNT,Professor,Sao Leopoldo,Lasanha,Volei,nao,Cancer,Inception,Desenho,Fortnite
+Gabriela Teixeira,2005-04-06,gabriela.teixeira@email.com,51896781234,Gremio,Trio Eletro,nao,Campo Bom,Pizza,Futebol,Sertanejo,Aries,nao,Jogging,FIFA
+Rodrigo Ferreira,2008-09-29,rodrigo.ferreira@email.com,51897654123,nao,Mafia da Graxa,Mecanico,Sao Leopoldo,Xis,Skate,Pop,Libra,Interestelar,Leitura,The Sims
